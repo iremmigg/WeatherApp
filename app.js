@@ -11,6 +11,7 @@ const days = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","P
 const months = ["Ocak","Şubat","Mart", " Nisan" , "Mayıs" ,"Haziran" , "Temmuz" , "Ağustos",
 "Eylül" , "Ekim" ,"Kasım" , "Aralık"];
 
+
 setInterval (() => {
     const time =new Date();
     const month = time.getMonth();
@@ -23,8 +24,8 @@ setInterval (() => {
     const ampm = hour >=12 ? 'PM' : 'AM'
 
     timeElement.innerHTML = hoursIn12HrFormat + ":" + minutes+ `<span id="am-pm">${ampm}</span>`;
-    dateElement.innerHTML = days[day] + "," + " " +date + months[month] ;
-    
+    dateElement.innerHTML = days[day] + "," + " " +date +" "+ months[month] ;
+    yearElement.innerHTML = year ;
    
 
 })

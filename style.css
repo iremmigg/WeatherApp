@@ -149,7 +149,7 @@ body {
     font-size: 15px;
 }
 
-.btn {
+.src-btn {
     background-color: rgba(40, 41, 41, 0.6);
     color: #ffffff;
     border: 1px solid #ffffff;
@@ -171,6 +171,7 @@ body {
     cursor: auto;
     font-size: 13px;
     margin: 4px 2px;
+    color: white;
 
 
 }

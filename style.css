@@ -35,13 +35,13 @@ body {
 
 .date_time .time {
     font-size: 70px;
-    font-weight: 100;
+
 
 }
 
 .date_time #am-pm {
     font-size: 30px;
-    font-weight: 20px;
+    margin-left: 20px;
 }
 
 .date_time .date {
@@ -60,7 +60,7 @@ body {
 .place .country {
     font-size: 10px;
     font-weight: 300;
-    
+
 
 }
 
@@ -70,98 +70,107 @@ body {
     background-color: rgba(40, 41, 41, 0.6);
     padding: 20px;
     border-radius: 10px;
-    margin: 10px 0 ;
+    margin: 10px 0;
     border: 1px solid white;
 }
 
-.info .cites .weather-items{
+.info .cites .weather-items {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
-.future-weather{
+.future-weather {
     background-color: rgba(40, 41, 41, 0.8);
     padding: 25px;
     position: fixed;
-    bottom: auto;
-    display:flex ;
+    bottom: 0;
+    display: flex;
     color: white;
     width: 100%;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow-y: hidden;
 }
+
 .future-weather .today {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    padding-right: 40px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2)
 }
 
-.future-weather .today .day{
+.future-weather .today .day {
     padding: 5px 15px;
-    background :#343333;
+    background: #343333;
     border-radius: 50px;
     text-align: center;
 
 }
 
-.future-weather .today .temp{
+.future-weather .today .temp {
     font-size: 20px;
     padding-top: 15px;
 }
 
 .future-weather .weather-forecast {
     display: flex;
-    
+
 }
 
-.future-weather .weather-forecast-item{
+.future-weather .weather-forecast-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 10px;
-    padding: 15px ;
-    border : 1px solid #ffffff;
+    padding: 15px;
+    border: 1px solid #ffffff;
     border-radius: 20px;
+    background: rgba(0, 0, 0, 0.2);
 }
 
-.future-weather .weather-forecast-item .day{
+.future-weather .weather-forecast-item .day {
     padding: 5px 15px;
-    background :#343333;
+    background: #343333;
     border-radius: 50px;
     text-align: center;
-    
-  
+
+
 }
 
 .future-weather .weather-forecast-item .temp {
     font-weight: 100;
+    font-size: 15px;
 }
-.btn{
+
+.btn {
     background-color: rgba(40, 41, 41, 0.6);
     color: #ffffff;
-    border :1px solid #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 5px 22px ;
+    padding: 5px 22px;
     text-align: center;
     cursor: pointer;
     font-size: 13px;
     margin: 4px 2px;
     display: inline-block;
-   
+
 }
-.search-bar{
+
+.search-bar {
     background-color: rgba(40, 41, 41, 0.6);
-    border :1px solid #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 5px 22px ;
+    padding: 5px 22px;
     cursor: auto;
     font-size: 13px;
     margin: 4px 2px;
-    
+
 
 }
-

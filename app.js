@@ -11,6 +11,7 @@ const days = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","P
 const months = ["Ocak","Şubat","Mart", " Nisan" , "Mayıs" ,"Haziran" , "Temmuz" , "Ağustos",
 "Eylül" , "Ekim" ,"Kasım" , "Aralık"];
 
+const API_KEY= "5f1291caf48d4e5cbc1142109230703";
 
 setInterval (() => {
     const time =new Date();

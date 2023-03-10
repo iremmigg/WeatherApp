@@ -152,10 +152,11 @@ body {
 
 .src-btn {
     background-color: rgba(40, 41, 41, 0.6);
+    background: transparent;
     color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 5px 22px;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
     font-size: 13px;
@@ -166,9 +167,10 @@ body {
 
 .search-bar {
     background-color: rgba(40, 41, 41, 0.6);
+    background: transparent;
     border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 5px 22px;
+    padding: 10px;
     cursor: auto;
     font-size: 13px;
     margin: 4px 2px;

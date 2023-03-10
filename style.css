@@ -186,12 +186,10 @@ body {
     bottom: 0;
     color: white;
     overflow-x: hidden;
-    top: 100 ;
     right: 0;
     height: 100%;
     width: 100%;
-    padding-bottom: 40px;
-    top: 0;
+    padding-bottom: 24px; 
     justify-content: center;
     align-items: center;
     
@@ -204,8 +202,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-   
     padding: 30px;
     padding-right: 45px;
     padding-bottom: 40px;

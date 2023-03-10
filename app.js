@@ -107,12 +107,12 @@ function showWeatherData(data){
     </div>
 
     <div class="weather-items" id="weather-items">
-        <div>Güneş Doğuşu</div>
+        <div>Gün Doğuşu</div>
         <div>${window.moment(sunrise * 1000).format('HH:mm a')}</div>
     </div>
 
     <div class="weather-items" id="weather-items">
-        <div>Güneş Batışı</div>
+        <div>Gün Batışı</div>
         <div>${window.moment(sunset*1000).format('HH:mm a')}</div>
     </div>
 

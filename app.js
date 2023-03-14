@@ -81,12 +81,12 @@ function getWeatherData() {
                 console.log(data)
                 showWeatherData(data);
             })
-    }, 
-    failure => {
-         if (failure.message.startsWith("Only secure origins are allowed")) {
+    },
+        failure => {
+            if (failure.message.startsWith("Only secure origins are allowed")) {
 
             }
-     })
+        })
 
 
 
@@ -95,13 +95,11 @@ function getWeatherData() {
 }
 
 function showWeatherData(data) {
-    let { humidity, pressure_mb
-        , sunrise, sunset, maxwind_kph } = data.current;
+    let { humidity, pressure_mb, sunrise, sunset, maxwind_kph } = data.forecast ;
     timeDayElement.innerHTML = data.timeDayElement;
     countryElement.innerHTML = data.lat + 'N ' + data.lon + 'E';
 
     weatherItemsElement.innerHTML = `
-    
     <div class="weather-items" id="weather-items">
         <div>Nem</div>
         <div>${humidity}%</div>

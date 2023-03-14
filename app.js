@@ -18,7 +18,7 @@ const formElement = document.getElementById("search")
 
 
 const days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
-const months = ["Ocak", "Şubat", "Mart", " Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos","Eylül", "Ekim", "Kasım", "Aralık"];
+const months = ["Ocak", "Şubat", "Mart", " Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
 
 setInterval(() => {
     const time = new Date();
@@ -35,7 +35,7 @@ setInterval(() => {
     dateElement.innerHTML = days[day] + "," + " " + date + " " + months[month];
     yearElement.innerHTML = year;
 
-},1)
+}, 1)
 /*let cityInput = "Ankara";
 for (let i = 0; i < cityElement.length; i++) {
     const city = cityElement[i];
@@ -67,29 +67,40 @@ formElement.addEventListener('submit', (e) => {
 
 
 
-
+getWeatherData()
 function getWeatherData() {
     navigator.geolocation.getCurrentPosition((success) => {
-     let {latitude, longitude } = success.coords;
-        fetch(`http://api.weatherapi.com/v1/future.json?key=c1d6ca2aaeed495fbaf131826231003&q=Ankara&dt=2023-04-09`)
-        .then(response => response.json())
+        console.log(success);
+        let { latitude, longitude } = success.coords;
+        fetch(`http://api.weatherapi.com/v1/future.json?key=c1d6ca2aaeed495fbaf131826231003&dt=2023-04-09&q=Eskisehir
+        &lat=${latitude}&long=${longitude}&days=7`)
+            .then(response => response.json())
 
-        .then(data =>{
+            .then(data => {
 
-            console.log(data)
-            showWeatherData() ;  
-        })
-        
-        
-    })
+                console.log(data)
+                showWeatherData(data);
+            })
+    }, 
+    failure => {
+         if (failure.message.startsWith("Only secure origins are allowed")) {
+
+            }
+     })
+
+
+
+
+
 }
 
-function showWeatherData(data){
-    let{humidity, pressure, sunrise, sunset, wind_speed} = data.current;
+function showWeatherData(data) {
+    let { humidity, pressure_mb
+        , sunrise, sunset, maxwind_kph } = data.current;
     timeDayElement.innerHTML = data.timeDayElement;
-    countryElement.innerHTML =data.lat + 'N ' + data.lon+'E';
+    countryElement.innerHTML = data.lat + 'N ' + data.lon + 'E';
 
-    weatherItemsElement.innerHTML= `
+    weatherItemsElement.innerHTML = `
     
     <div class="weather-items" id="weather-items">
         <div>Nem</div>
@@ -98,12 +109,12 @@ function showWeatherData(data){
 
     <div class="weather-items" id="weather-items">
         <div>Basınç</div>
-         <div>${pressure}</div>
+         <div>${pressure_mb}</div>
     </div>
 
     <div class="weather-items" id="weather-items">
         <div>Rüzgar Hızı</div>
-         <div>${wind_speed}</div>
+         <div>${maxwind_kph}</div>
     </div>
 
     <div class="weather-items" id="weather-items">
@@ -113,13 +124,13 @@ function showWeatherData(data){
 
     <div class="weather-items" id="weather-items">
         <div>Gün Batışı</div>
-        <div>${window.moment(sunset*1000).format('HH:mm a')}</div>
+        <div>${window.moment(sunset * 1000).format('HH:mm a')}</div>
     </div>
 
     `;
-    
+
 }
-getWeatherData()
+
 
 
 

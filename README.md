@@ -8,3 +8,5 @@
 #### In the upper left corner of the application, there are hours, days, months and years. The application takes the time, day, month and year from your computer's time information.
 
 ![WeatherApp_DayTime_V1.0](https://github.com/iremmigg/WeatherApp/blob/main/Weather-ReadMe-img/Date.png)
+
+#### You can see the humidity, pressure, wind rates and sunrise and sunset times of the city you selected in the area below the area showing the time and day in the upper left corner.

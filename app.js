@@ -154,10 +154,10 @@ function showWeatherData(data) {
 
 
     data.forecast.forecastday.forEach((day, i) => {
-       // otherDayForcastDataJson.day = data.forecast.forecastday[i].date;
+        otherDayForcastDataJson.day = data.forecast.forecastday[i].date;
         otherDayForcastDataJson.morning = data.forecast.forecastday[i].day.maxtemp_c;
         otherDayForcastDataJson.night = data.forecast.forecastday[i].day.mintemp_c;
-        otherDayForcastDataJson.icon = data.forecast.forecastday[i].condition;
+        otherDayForcastDataJson.icon = data.forecast.forecastday[i].day.condition.icon;
 
         if (i == 0) {
             todayTempElement.innerHTML = `

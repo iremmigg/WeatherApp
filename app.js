@@ -1,3 +1,7 @@
+
+const KEY = 'c1d6ca2aaeed495fbaf131826231003';
+
+
 let timeElement = null;
 let dateElement = null
 let searchElement = null;
@@ -10,8 +14,6 @@ let futureWeatherElement =  null;
 let todayTempElement =  null;
 let formElement =  null;
 let citesElement = null ;
-
-const API_KEY = 'fab46e445d4c4a9eadd121055231003';
 
 
 
@@ -26,7 +28,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
    cityElement = document.getElementsByClassName("city");
    yearElement = document.getElementById("year");
    weatherItemsElement = document.getElementById("weather-items");
-   timeDayElement = document.getElementById("time-day");
+   timeDayElement = document.getElementById("time_day");
    countryElement = document.getElementById("country");
    futureWeatherElement = document.getElementById("future-weather");
    todayTempElement = document.getElementById("today-temp");
@@ -116,6 +118,9 @@ function showWeatherData(data) {
     dataJson.sunrise = data.forecast.forecastday[0].astro.sunrise;
     dataJson.sunset = data.forecast.forecastday[0].astro.sunset;
 
+    timeDayElement.innerHTML = data.time_day;
+    countryElement.innerHTML = data.lat + 'N ' + data.lon+'E'
+
     citesElement.innerHTML = `
     <div class="weather-items" id="weather-items">
         <div>Nem</div>
@@ -138,6 +143,8 @@ function showWeatherData(data) {
     </div>
 
     `;
+
+    data
 
 }
 

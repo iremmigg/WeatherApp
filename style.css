@@ -230,6 +230,33 @@ body {
     
 }
 
+.info .todayWeather{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(40, 41, 41, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 1px solid white;
+    font-size: 19px;
+}
+
+.info .todayWeather .air_temperature{
+    display: flex;
+    justify-content: space-between;
+
+}
+.info .todayWeather .sunset{
+    display: flex;
+    justify-content: space-between;
+
+}
+.info .todayWeather .sunrise{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 
 
 

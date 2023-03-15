@@ -1,26 +1,38 @@
+let timeElement = null;
+let dateElement = null
+let searchElement = null;
+let cityElement = null;
+let yearElement =  null;
+let weatherItemsElement =  null;
+let timeDayElement =  null;
+let countryElement = null;
+let futureWeatherElement =  null;
+let todayTempElement =  null;
+let formElement =  null;
+let citesElement = null ;
 
 const API_KEY = 'fab46e445d4c4a9eadd121055231003';
-
-
-const timeElement = document.getElementById("time");
-const dateElement = document.getElementById("date");
-const searchElement = document.getElementById("search-bar");
-const cityElement = document.getElementsByClassName("city");
-const yearElement = document.getElementById("year");
-const weatherItemsElement = document.getElementById("weather-items");
-const timeDayElement = document.getElementById("time-day");
-const countryElement = document.getElementById("country");
-const futureWeatherElement = document.getElementById("future-weather");
-const todayTempElement = document.getElementById("today-temp");
-const formElement = document.getElementById("search")
-
 
 
 
 const days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
 const months = ["Ocak", "Şubat", "Mart", " Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
 
-setInterval(() => {
+
+window.addEventListener('DOMContentLoaded', (event) => {
+   timeElement = document.getElementById("time");
+   dateElement = document.getElementById("date");
+   searchElement = document.getElementById("search-bar");
+   cityElement = document.getElementsByClassName("city");
+   yearElement = document.getElementById("year");
+   weatherItemsElement = document.getElementById("weather-items");
+   timeDayElement = document.getElementById("time-day");
+   countryElement = document.getElementById("country");
+   futureWeatherElement = document.getElementById("future-weather");
+   todayTempElement = document.getElementById("today-temp");
+   formElement = document.getElementById("search");
+   citesElement = document.getElementById("cites");
+
     const time = new Date();
     const month = time.getMonth();
     const date = time.getDate();
@@ -35,7 +47,12 @@ setInterval(() => {
     dateElement.innerHTML = days[day] + "," + " " + date + " " + months[month];
     yearElement.innerHTML = year;
 
-}, 1)
+    getWeatherData()
+
+});
+
+
+
 /*let cityInput = "Ankara";
 for (let i = 0; i < cityElement.length; i++) {
     const city = cityElement[i];
@@ -67,7 +84,7 @@ formElement.addEventListener('submit', (e) => {
 
 
 
-getWeatherData()
+
 function getWeatherData() {
     navigator.geolocation.getCurrentPosition((success) => {
         console.log(success);
@@ -75,9 +92,7 @@ function getWeatherData() {
         fetch(`http://api.weatherapi.com/v1/future.json?key=c1d6ca2aaeed495fbaf131826231003&dt=2023-04-09&q=Eskisehir
         &lat=${latitude}&long=${longitude}&days=7`)
             .then(response => response.json())
-
             .then(data => {
-
                 console.log(data)
                 showWeatherData(data);
             })
@@ -87,42 +102,39 @@ function getWeatherData() {
 
             }
         })
-
-
-
-
-
 }
-
 function showWeatherData(data) {
-    let { humidity, pressure_mb, sunrise, sunset, maxwind_kph } = data.forecast ;
-    timeDayElement.innerHTML = data.timeDayElement;
-    countryElement.innerHTML = data.lat + 'N ' + data.lon + 'E';
+    let dataJson = {
+        humidity: "",
+        sunrise: "",
+        sunset: "",
+        maxwind_kph: ""
+    };
 
-    weatherItemsElement.innerHTML = `
+    dataJson.humidity = data.forecast.forecastday[0].day.avghumidity;
+    dataJson.maxwind_kph = data.forecast.forecastday[0].day.maxwind_kph;
+    dataJson.sunrise = data.forecast.forecastday[0].astro.sunrise;
+    dataJson.sunset = data.forecast.forecastday[0].astro.sunset;
+
+    citesElement.innerHTML = `
     <div class="weather-items" id="weather-items">
         <div>Nem</div>
-        <div>${humidity}%</div>
-    </div>
-
-    <div class="weather-items" id="weather-items">
-        <div>Basınç</div>
-         <div>${pressure_mb}</div>
+        <div>${dataJson.humidity}%</div>
     </div>
 
     <div class="weather-items" id="weather-items">
         <div>Rüzgar Hızı</div>
-         <div>${maxwind_kph}</div>
+         <div>${dataJson.maxwind_kph}</div>
     </div>
 
     <div class="weather-items" id="weather-items">
         <div>Gün Doğuşu</div>
-        <div>${window.moment(sunrise * 1000).format('HH:mm a')}</div>
+        <div>${dataJson.sunrise}</div>
     </div>
 
     <div class="weather-items" id="weather-items">
         <div>Gün Batışı</div>
-        <div>${window.moment(sunset * 1000).format('HH:mm a')}</div>
+        <div>${dataJson.sunset}</div>
     </div>
 
     `;

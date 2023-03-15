@@ -1,5 +1,5 @@
 
-const KEY = 'c1d6ca2aaeed495fbaf131826231003';
+const KEY = '5e3f26170c0d43ab8ec72732231503';
 
 
 let timeElement = null;
@@ -91,8 +91,7 @@ function getWeatherData() {
     navigator.geolocation.getCurrentPosition((success) => {
         console.log(success);
         let { latitude, longitude } = success.coords;
-        fetch(`http://api.weatherapi.com/v1/future.json?key=c1d6ca2aaeed495fbaf131826231003&dt=2023-04-09&q=Eskisehir
-        &lat=${latitude}&long=${longitude}&days=7`)
+        fetch(`http://api.weatherapi.com/v1/forecast.json?key=5e3f26170c0d43ab8ec72732231503&q=Eskisehir&days=7&lat=${latitude}&long=${longitude}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -110,16 +109,19 @@ function showWeatherData(data) {
         humidity: "",
         sunrise: "",
         sunset: "",
-        maxwind_kph: ""
+        maxwind_kph: "",
+
     };
 
     dataJson.humidity = data.forecast.forecastday[0].day.avghumidity;
     dataJson.maxwind_kph = data.forecast.forecastday[0].day.maxwind_kph;
     dataJson.sunrise = data.forecast.forecastday[0].astro.sunrise;
     dataJson.sunset = data.forecast.forecastday[0].astro.sunset;
+    dataJson.latitude = data.location.lat;
+    dataJson.longitude = data.location.lon;
 
     timeDayElement.innerHTML = data.time_day;
-    countryElement.innerHTML = data.lat + 'N ' + data.lon+'E'
+    countryElement.innerHTML = data.lat + 'N ' + data.lon+'E';
 
     citesElement.innerHTML = `
     <div class="weather-items" id="weather-items">

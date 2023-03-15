@@ -6,34 +6,34 @@ let timeElement = null;
 let dateElement = null
 let searchElement = null;
 let cityElement = null;
-let yearElement =  null;
-let weatherItemsElement =  null;
-let timeDayElement =  null;
+let yearElement = null;
+let weatherItemsElement = null;
+let timeDayElement = null;
 let countryElement = null;
-let futureWeatherElement =  null;
-let todayTempElement =  null;
-let formElement =  null;
-let citesElement = null ;
+let futureWeatherElement = null;
+let todayTempElement = null;
+let formElement = null;
+let citesElement = null;
 
 
 
-const days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
-const months = ["Ocak", "Şubat", "Mart", " Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+let days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
+let months = ["Ocak", "Şubat", "Mart", " Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
 
 
 window.addEventListener('DOMContentLoaded', (event) => {
-   timeElement = document.getElementById("time");
-   dateElement = document.getElementById("date");
-   searchElement = document.getElementById("search-bar");
-   cityElement = document.getElementsByClassName("city");
-   yearElement = document.getElementById("year");
-   weatherItemsElement = document.getElementById("weather-items");
-   timeDayElement = document.getElementById("time_day");
-   countryElement = document.getElementById("country");
-   futureWeatherElement = document.getElementById("future-weather");
-   todayTempElement = document.getElementById("today-temp");
-   formElement = document.getElementById("search");
-   citesElement = document.getElementById("cites");
+    timeElement = document.getElementById("time");
+    dateElement = document.getElementById("date");
+    searchElement = document.getElementById("search-bar");
+    cityElement = document.getElementsByClassName("city");
+    yearElement = document.getElementById("year");
+    weatherItemsElement = document.getElementById("weather-items");
+    timeDayElement = document.getElementById("time_day");
+    countryElement = document.getElementById("country");
+    weatherForecastElement = document.getElementById("weather-forecast");
+    todayTempElement = document.getElementById("today-temp");
+    formElement = document.getElementById("search");
+    citesElement = document.getElementById("cites");
 
     const time = new Date();
     const month = time.getMonth();
@@ -105,48 +105,91 @@ function getWeatherData() {
         })
 }
 function showWeatherData(data) {
-    let dataJson = {
+    let itemsDataJson = {
         humidity: "",
+        preasure: "",
         sunrise: "",
         sunset: "",
-        maxwind_kph: "",
+        wind_kph: "",
+        latitude: "",
+        longitude: ""
 
     };
 
-    dataJson.humidity = data.forecast.forecastday[0].day.avghumidity;
-    dataJson.maxwind_kph = data.forecast.forecastday[0].day.maxwind_kph;
-    dataJson.sunrise = data.forecast.forecastday[0].astro.sunrise;
-    dataJson.sunset = data.forecast.forecastday[0].astro.sunset;
-    dataJson.latitude = data.location.lat;
-    dataJson.longitude = data.location.lon;
+    itemsDataJson.humidity = data.current.humidity;
+    itemsDataJson.preasure = data.current.pressure_in;
+    itemsDataJson.wind_kph = data.current.wind_kph
+    itemsDataJson.latitude = data.location.lat;
+    itemsDataJson.longitude = data.location.lon;
 
-    timeDayElement.innerHTML = data.time_day;
-    countryElement.innerHTML = data.lat + 'N ' + data.lon+'E';
+
 
     citesElement.innerHTML = `
     <div class="weather-items" id="weather-items">
         <div>Nem</div>
-        <div>${dataJson.humidity}%</div>
+        <div>${itemsDataJson.humidity}%</div>
     </div>
+
+    <div class="weather-items" id="weather-items">
+    <div>Basınç</div>
+    <div>${itemsDataJson.preasure}</div>
+    </div>  
 
     <div class="weather-items" id="weather-items">
         <div>Rüzgar Hızı</div>
-         <div>${dataJson.maxwind_kph}</div>
+         <div>${itemsDataJson.wind_kph}</div>
     </div>
 
-    <div class="weather-items" id="weather-items">
-        <div>Gün Doğuşu</div>
-        <div>${dataJson.sunrise}</div>
-    </div>
 
-    <div class="weather-items" id="weather-items">
-        <div>Gün Batışı</div>
-        <div>${dataJson.sunset}</div>
-    </div>
 
     `;
 
-    data
+    let otherDayForcast = "";
+    let otherDayForcastDataJson = {
+        day:"",
+        morning: "",
+        night: "",
+        icon: ""
+    };
+
+
+    data.forecast.forecastday.forEach((day, i) => {
+       // otherDayForcastDataJson.day = data.forecast.forecastday[i].date;
+        otherDayForcastDataJson.morning = data.forecast.forecastday[i].day.maxtemp_c;
+        otherDayForcastDataJson.night = data.forecast.forecastday[i].day.mintemp_c;
+        otherDayForcastDataJson.icon = data.forecast.forecastday[i].condition;
+
+        if (i == 0) {
+            todayTempElement.innerHTML = `
+            <img src="${otherDayForcastDataJson.icon}" alt="weather-icon" class="weather-icon">
+            <div class="other">
+                <div class="day"></div>
+                <div class="temp">Gündüz -${otherDayForcastDataJson.morning}&#176;C</div>
+                <div class="temp">Gece -${otherDayForcastDataJson.night}&#176;C</div>
+            </div>
+            `
+        }
+        else {
+            otherDayForcast += `
+            <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day"></div>
+                <img src=${otherDayForcastDataJson.icon} alt="weather-icon" class="weather-icon">
+                <div class="temp">Gündüz -${otherDayForcastDataJson.morning}&#176;C</div>
+                <div class="temp">Gece -${otherDayForcastDataJson.night}&#176;C</div>
+            </div>
+
+            `
+        }
+
+        weatherForecastElement.innerHTML = otherDayForcast;
+
+
+
+    });
+
+
+
 
 }
 

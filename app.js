@@ -194,7 +194,7 @@ function showWeatherData(data) {
             todayWeatherElement.innerHTML = `
                 <div class="air_temperature" id="air_temperature">
                 <img src=${otherDayForcastDataJson.icon} alt="weather-icon" class="weather-icon">
-                <div>Sıcaklık</div>
+                <div>Sıcaklık - </div>
                 <div>${otherDayForcastDataJson.temp}&#176;C</div>
                 </div>
 

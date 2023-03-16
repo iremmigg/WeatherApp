@@ -73,12 +73,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         e.preventDefault();
     });
 
-    /*cityElement.addEventListener("click",function clickCity() {
-        
-        getWeatherData(searchElement.value);
-        
-
-    })*/
+  
 
 });
 

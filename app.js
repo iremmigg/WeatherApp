@@ -199,14 +199,14 @@ function showWeatherData(data) {
                 </div>
 
                 <div class="sunrise" id="sunrise">
-                    <img src=${otherDayForcastDataJson.icon} alt="weather-icon" class="weather-icon">
-                    <div>Gün Doğumu</div>
+                    <img src="img/sunrise.png"alt="weather-icon" class="weather-icon"  width="60" height="60">
+                    <div>Gün Doğumu - </div>
                     <div>${otherDayForcastDataJson.sunrise}</div>
                 </div>
                 
                 <div class="sunset" id="sunset">
-                    <img src=${otherDayForcastDataJson.icon} alt="weather-icon" class="weather-icon">
-                    <div>Gün Batımı</div>
+                    <img src="img/sunset.png"  alt="weather-icon" class="weather-icon" width="60" height="60">
+                    <div>Gün Batımı - </div>
                     <div>${otherDayForcastDataJson.sunset}</div>
                 </div>
     

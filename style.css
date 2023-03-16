@@ -239,21 +239,32 @@ body {
     margin: 10px 0;
     border: 1px solid white;
     font-size: 19px;
+    
+    
+   
 }
 
 .info .todayWeather .air_temperature{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between ;
+    align-items: center;
+    
 
 }
 .info .todayWeather .sunset{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    align-items: center;
+    
+    
 
 }
 .info .todayWeather .sunrise{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    align-items: center;
+   
+    
 
 }
 

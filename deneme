@@ -1,0 +1,71 @@
+
+
+.future-weather {
+    background-color: rgba(40, 41, 41, 0.8);
+    padding: 25px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+.future-weather .today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+   
+    padding: 30px;
+    padding-right: 45px;
+    padding-bottom: 40px;
+    border-radius: 55px;
+    background: rgba(0, 0, 0, 0.2)
+}
+
+.future-weather .today .day {
+    padding: 5px 15px;
+    background: #343333;
+    border-radius: 50px;
+    text-align: center;
+
+}
+
+.future-weather .today .temp {
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.future-weather .weather-forecast {
+    display: flex;
+
+}
+
+.future-weather .weather-forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.future-weather .weather-forecast-item .day {
+    padding: 5px 15px;
+    background: #343333;
+    border-radius: 50px;
+    text-align: center;
+
+
+}
+
+.future-weather .weather-forecast-item .temp {
+    font-weight: 100;
+    font-size: 15px;
+}

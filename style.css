@@ -183,17 +183,15 @@ body {
 {
     background-color: rgba(40, 41, 41, 0.8);
     padding: 25px;
+    
     bottom: 0;
     color: white;
     overflow-x: hidden;
     right: 0;
-    height: 100%;
     width: 100%;
-    padding-bottom: 24px; 
+    padding-bottom: 2px; 
     justify-content: center;
     align-items: center;
-    
-    
     
 }
 
@@ -203,31 +201,51 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px;
-    padding-right: 45px;
+    padding-right: 50px;
     padding-bottom: 40px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.2)
 
 }
 
-.palce-line .search-cities{
+.weatherItemsDay
+{
+    background-color: rgba(40, 41, 41, 0.8);
+    padding: 25px;
+    bottom: 0;
+    display: flex;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    
+}
+    
+.weatherItemsDay .weatherItemsDay_id
+{
     display: flex;
     flex-direction: column;
-    background-color: rgba(40, 41, 41, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 15px;
+    border-radius: 20px;
     
 }
 
-
-.palce-line .search-cities .city{
-    display: flex;
-    justify-content: between;
-    padding: 20px;
+.weatherItemsDay .weatherItemsDay_id .feelslike 
+{
+    padding: 5px 15px;
+    border-radius: 50px;
     text-align: center;
-    margin: 0 10px;
-    
+
+}
+
+.weatherItemsDay .weatherItemsDay_id .feelslike  .forecast{
+
+    font-weight: 100;
+    font-size: 15px;
 }
 
 .info .todayWeather{

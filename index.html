@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="./sweetalert2.min.css">
-    
+    <link rel="stylesheet" href="./sweetalert2.min.css">
+
     <title>Weather App</title>
 </head>
 
@@ -23,13 +23,13 @@
 
                 </div>
                 <div class="date" id="date">
-                   
+
                 </div>
 
                 <div class="year" id="year">
-                    
+
                 </div>
-                
+
 
                 <div class="todayWeather" id="todayWeather">
                     <div class="air_temperature" id="air_temperature">
@@ -48,18 +48,18 @@
                         <div>derece</div>
                     </div>
 
-                    
+
                 </div>
-                
+
 
                 <div class="cites" id="cites">
 
 
                 </div>
 
-            
+
             </div>
-            
+
             <div>
 
             </div>
@@ -69,31 +69,48 @@
                     <div class="country" id="country">IN</div>
                     <br>
                     <br>
-                    <div class="search" id="search"> 
+
+                    <div class="search" id="search">
                         <input type="text" placeholder="Konum" class="search-bar" id="search-bar">
                         <button class="src-btn" id="src-btn">Ara</button>
                         <br>
                         <br>
 
-                    </div> 
+                    </div>
 
-                    <div class="search-cities" id="search-cities">
-                            <div class="city" id="city">
-                            <div>Istanbul /Türkiye</div>
+                </div>
+                <br>
+                <br>
 
-                        </div>
-                            <div class="city" id="city">
-                            <div>Eskişehir/Türkiye</div>
+                <div class="weatherItemsDay" id="weatherItemsDay">
 
-                        </div>
-                            <div class="city" id="city">
-                            <div>Ankara/Türkiye</div>
+                    <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+                        <div class="feelslike" id="feelslike"></div>
+                        <img src="img/feel.png" alt="feel" width="60" height="60">
+                        <div class="forecast">Sıcaklık</div>
+                        <div class="forecast">derece&#176;C</div>
+                    </div>
 
-                        </div>
-                            <div class="city" id="city">
-                            <div>Izmir/Türkiye</div>
 
-                        </div>
+                    <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+                        <div class="cloud" id="cloud"></div>
+                        <img src="img/cloud.png" alt="cloud"width="60" height="60">
+                        <div class="forecast">Bulut</div>
+                        <div class="forecast">derece%</div>
+                    </div>
+
+                    <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+                        <div class="snow" id="snow"></div>
+                        <img src="img/snow.png" alt="snow" width="60" height="60">
+                        <div class="forecast">Kar Olasılığı</div>
+                        <div class="forecast">derece</div>
+                    </div>
+
+                    <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+                        <div lass="rain" id="rain" ></div>
+                        <img src="img/rain.png" alt="rain" width="60" height="60">
+                        <div class="forecast">Yağmur Olasılığı</div>
+                        <div class="forecast">derece</div>
                     </div>
 
                 </div>
@@ -167,10 +184,13 @@
 
     </div>
 
-    
+
     <script src="./sweetalert2.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="app.js"></script>
-    
+
 </body>
+
 </html>

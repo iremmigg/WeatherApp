@@ -16,8 +16,11 @@ let formElement = null;
 let citesElement = null;
 let todayWeatherElement = null;
 let air_temperatureElement = null;
-let sunriseElemen = null;
+let sunriseElement = null;
 let sunsetElement = null;
+let weatherItemsDayElement = null;
+let weatherItemsDay_idElement = null ;
+
 
 
 let days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
@@ -42,6 +45,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     air_temperatureElement = document.getElementById("air_temperature");
     sunriseElement = document.getElementById("sunrise");
     sunsetElement = document.getElementById("sunset");
+    weatherItemsDayElement = document.getElementById("weatherItemsDay_id")
+    weatherItemsDay_idElement = document.getElementById("weatherItemsDay_id")
 
     setInterval(() => {
         const time = new Date();
@@ -65,24 +70,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getWeatherData();
     srcBtnElement.addEventListener("click", (event) => {
         if (searchElement.value.length === 0) {
-            Swal.fire ({
-                title : "Bu Alan Boş Bırakılamaz",
-                text : "Lütfen Bir Şehir/İlçe İsmi Giriniz !",
-				icon : "error",
-				buttons : true,
-				dangerMode: true,
+            Swal.fire({
+                title: "Bu Alan Boş Bırakılamaz",
+                text: "Lütfen Bir Şehir/İlçe İsmi Giriniz !",
+                icon: "error",
+                buttons: true,
+                dangerMode: true,
 
-            })    
+            })
         }
-      
+
         else {
             getWeatherData(searchElement.value);
         }
         e.preventDefault();
     });
 
-  
-    
+
+
 
 });
 
@@ -150,11 +155,9 @@ function showWeatherData(data) {
          <div>${itemsDataJson.wind_kph}</div>
     </div>
 
-
-
     `;
     timeDayElement.innerHTML = `
-        <div class="time_day" id="time_day">${itemsDataJson.cityy}</div>
+        <div class="time_day" id="time_day" >${itemsDataJson.cityy} </div>
     `
     countryElement.innerHTML = `
         <div class="country" id="country">${itemsDataJson.latitude}  "N"  ${itemsDataJson.longitude} "E" </div>
@@ -172,6 +175,11 @@ function showWeatherData(data) {
         sunset: "",
 
         temp: "",
+
+        feel: "",
+        cloud: "",
+        snow: "",
+        rain: ""
     };
 
 
@@ -181,29 +189,71 @@ function showWeatherData(data) {
         otherDayForcastDataJson.morning = day.day.maxtemp_c;
         otherDayForcastDataJson.night = day.day.mintemp_c;
         otherDayForcastDataJson.icon = day.day.condition.icon;
+
         otherDayForcastDataJson.sunrise = day.astro.sunrise;
         otherDayForcastDataJson.sunset = day.astro.sunset;
         otherDayForcastDataJson.temp = data.current.temp_c;
 
+        otherDayForcastDataJson.feel = data.current.feelslike_c;
+        otherDayForcastDataJson.cloud =data.current.cloud;
+        otherDayForcastDataJson.snow = day.day.daily_chance_of_snow;
+        otherDayForcastDataJson.rain = day.day.daily_chance_of_rain;
+        
+
+
+
 
         if (i == 0) {
+
+            weatherItemsDayElement.innerHTML = `
+            <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+              <div class="feelslike" id="feelslike"></div>
+              <img src="img/feel.png" alt="feel" width="60" height="60">
+              <div class="forecast">Sıcaklık</div>
+              <div class="forecast">${otherDayForcastDataJson.feel}&#176;C</div>
+            </div>
+
+
+        <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+            <div class="cloud" id="cloud"></div>
+            <img src="img/cloud.png" alt="cloud"width="60" height="60">
+            <div class="forecast">Bulut</div>
+            <div class="forecast">${otherDayForcastDataJson.cloud}%</div>
+        </div>
+
+        <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+            <div class="snow" id="snow"></div>
+            <img src="img/snow.png" alt="snow" width="60" height="60">
+            <div class="forecast">Kar Olasılığı</div>
+            <div class="forecast">${otherDayForcastDataJson.snow}%</div>
+        </div>
+
+        <div class="weatherItemsDay_id" id="weatherItemsDay_id">
+            <div lass="rain" id="rain" ></div>
+            <img src="img/rain.png" alt="rain" width="60" height="60">
+            <div class="forecast">Yağmur Olasılığı</div>
+            <div class="forecast">${otherDayForcastDataJson.rain}%</div>
+        </div>
+
+            
+            `
 
             todayWeatherElement.innerHTML = `
                 <div class="air_temperature" id="air_temperature">
                 <img src=${otherDayForcastDataJson.icon} alt="weather-icon" class="weather-icon">
-                <div>Sıcaklık - </div>
+                <div>Sıcaklık  _</div> 
                 <div>${otherDayForcastDataJson.temp}&#176;C</div>
                 </div>
 
                 <div class="sunrise" id="sunrise">
                     <img src="img/sunrise.png"alt="weather-icon" class="weather-icon"  width="60" height="60">
-                    <div>Gün Doğumu - </div>
+                    <div>Gün Doğumu_ </div>
                     <div>${otherDayForcastDataJson.sunrise}</div>
                 </div>
                 
                 <div class="sunset" id="sunset">
                     <img src="img/sunset.png"  alt="weather-icon" class="weather-icon" width="60" height="60">
-                    <div>Gün Batımı - </div>
+                    <div>Gün Batımı _ </div>
                     <div>${otherDayForcastDataJson.sunset}</div>
                 </div>
     

@@ -98,7 +98,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid #eee;
-   
+
     padding: 30px;
     padding-right: 45px;
     padding-bottom: 40px;
@@ -159,7 +159,7 @@ body {
     padding: 10px;
     text-align: center;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 20px;
     margin: 4px 2px;
     display: inline-block;
 
@@ -172,30 +172,30 @@ body {
     border-radius: 5px;
     padding: 10px;
     cursor: auto;
-    font-size: 13px;
+    font-size: 20px;
     margin: 4px 2px;
     color: white;
+    
 
 
 }
 
-.palce-line
-{
+.palce-line {
     background-color: rgba(40, 41, 41, 0.8);
     padding: 25px;
-    
+
     bottom: 0;
     color: white;
     overflow-x: hidden;
     right: 0;
     width: 100%;
-    padding-bottom: 2px; 
+    padding-bottom: 2px;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.palce-line .search{
+.palce-line .search {
     margin-bottom: 3em;
     display: flex;
     align-items: center;
@@ -205,11 +205,9 @@ body {
     padding-bottom: 40px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.2)
-
 }
 
-.weatherItemsDay
-{
+.weatherItemsDay {
     background-color: rgba(40, 41, 41, 0.8);
     padding: 25px;
     bottom: 0;
@@ -217,14 +215,13 @@ body {
     color: white;
     width: 100%;
     align-items: center;
-    justify-content: space-between ;
+    justify-content: space-between;
     overflow-y: hidden;
-    
-    
+
+
 }
-    
-.weatherItemsDay .weatherItemsDay_id
-{
+
+.weatherItemsDay .weatherItemsDay_id {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -232,27 +229,26 @@ body {
     margin: 0 10px;
     padding: 15px;
     border-radius: 20px;
-    
-    
-    
+
+
+
 }
 
-.weatherItemsDay .weatherItemsDay_id .feelslike 
-{
+.weatherItemsDay .weatherItemsDay_id .feelslike {
     padding: 5px 15px;
     border-radius: 50px;
     text-align: center;
 
 }
 
-.weatherItemsDay .weatherItemsDay_id .feelslike  .forecast{
+.weatherItemsDay .weatherItemsDay_id .feelslike .forecast {
 
     font-weight: 100;
     font-size: 15px;
 }
 
 
-.info .todayWeather{
+.info .todayWeather {
     display: flex;
     flex-direction: column;
     background-color: rgba(40, 41, 41, 0.6);
@@ -261,46 +257,44 @@ body {
     margin: 10px 0;
     border: 1px solid white;
     font-size: 19px;
-    
-    
-   
+
+
+
 }
 
-.info .todayWeather .air_temperature{
+.info .todayWeather .air_temperature {
     display: flex;
     align-items: center;
-    
+
 
 }
-.info .todayWeather .sunset{
+
+.info .todayWeather .sunset {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    
-    
+
+
 
 }
-.info .todayWeather .sunrise{
+
+.info .todayWeather .sunrise {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-   
-    
+
+
 
 }
 
-.place .palce-line .time_day
-{
+.place .palce-line .time_day {
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
 }
 
-.place .palce-line .country
-{
+.place .palce-line .country {
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
 }
-
-

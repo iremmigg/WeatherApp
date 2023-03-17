@@ -19,7 +19,7 @@ let air_temperatureElement = null;
 let sunriseElement = null;
 let sunsetElement = null;
 let weatherItemsDayElement = null;
-let weatherItemsDay_idElement = null ;
+let weatherItemsDay_idElement = null;
 
 
 
@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     air_temperatureElement = document.getElementById("air_temperature");
     sunriseElement = document.getElementById("sunrise");
     sunsetElement = document.getElementById("sunset");
-    weatherItemsDayElement = document.getElementById("weatherItemsDay_id")
+    weatherItemsDayElement = document.getElementById("weatherItemsDay")
     weatherItemsDay_idElement = document.getElementById("weatherItemsDay_id")
 
     setInterval(() => {
@@ -195,10 +195,10 @@ function showWeatherData(data) {
         otherDayForcastDataJson.temp = data.current.temp_c;
 
         otherDayForcastDataJson.feel = data.current.feelslike_c;
-        otherDayForcastDataJson.cloud =data.current.cloud;
+        otherDayForcastDataJson.cloud = data.current.cloud;
         otherDayForcastDataJson.snow = day.day.daily_chance_of_snow;
         otherDayForcastDataJson.rain = day.day.daily_chance_of_rain;
-        
+
 
 
 

@@ -209,7 +209,7 @@ function showWeatherData(data) {
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
               <div class="feelslike" id="feelslike"></div>
               <img src="img/feel.png" alt="feel" width="60" height="60">
-              <div class="forecast">Sıcaklık</div>
+              <div class="forecast">Hissedilen Sıcaklık</div>
               <div class="forecast">${otherDayForcastDataJson.feel}&#176;C</div>
             </div>
 
@@ -217,7 +217,7 @@ function showWeatherData(data) {
         <div class="weatherItemsDay_id" id="weatherItemsDay_id">
             <div class="cloud" id="cloud"></div>
             <img src="img/cloud.png" alt="cloud"width="60" height="60">
-            <div class="forecast">Bulut</div>
+            <div class="forecast">Bulutluluk Oranı</div>
             <div class="forecast">${otherDayForcastDataJson.cloud}%</div>
         </div>
 

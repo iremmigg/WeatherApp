@@ -183,7 +183,7 @@ body {
 .palce-line {
     background-color: rgba(40, 41, 41, 0.8);
     padding: 25px;
-
+    border-radius: 20px;
     bottom: 0;
     color: white;
     overflow-x: hidden;
@@ -217,6 +217,7 @@ body {
     align-items: center;
     justify-content: space-between;
     overflow-y: hidden;
+    border-radius: 20px;
 
 
 }
@@ -291,6 +292,7 @@ body {
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
+    
 }
 
 .place .palce-line .country {

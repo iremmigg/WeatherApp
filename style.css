@@ -140,6 +140,7 @@ body {
     font-weight: 100;
     font-size: 15px;
 }
+
 /* Under/ForecastWeather END */
 
 /* Right START*/
@@ -306,3 +307,143 @@ body {
 
 /* Temp/Sunrise/Sunset END */
 
+@media only screen and (max-width:730px) {
+
+
+
+    .card {
+        padding: 20px;
+    }
+
+    .date_time .date {
+        font-size: 20px;
+    }
+
+    .date_time .time {
+        font-size: 50px
+    }
+
+    .date_time .ap-pm {
+        font-size: 20px;
+    }
+
+    .date_time .year {
+        font-size: 10px;
+    }
+
+    .info .todayWeather .air_temperature {
+        font-size: 13px;
+        object-fit: fill;
+
+    }
+
+    .info .todayWeather .sunset {
+        font-size: 13px;
+        object-fit: fill;
+
+    }
+
+    .info .todayWeather .sunrise {
+        font-size: 13px;
+        object-fit: fill;
+
+    }
+
+    .weather-items {
+        font-size: 13px;
+    }
+
+    .future-weather {
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+
+    }
+
+    .future-weather.today.temp {
+        font-size: 16px;
+    }
+    
+
+    
+
+    @media only screen and (max-width: 1400px){
+        .future-weather{
+            justify-content: start;
+            align-items: none;
+            overflow-x: scroll;
+        }
+    }
+
+    /*
+  
+
+    .place .palce-line {
+        text-align: end;
+        margin-top: 15px;
+    }
+
+    .place .palce-line .time_day {
+        font-size: 20px;
+    }
+
+
+    .place .weatherItemsDay {
+        text-align: end;
+        margin-top: 15px;
+    }
+
+
+
+    .place .palce-line .country {
+        font-size: 13px;
+    }
+
+    .search-bar {
+        background-color: rgba(40, 41, 41, 0.6);
+        background: transparent;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        padding: 1px;
+        cursor: auto;
+        font-size: 13px;
+        margin: 4px 2px;
+        color: white;
+
+    }
+
+    .palce-line .search {
+
+        padding: 3px;
+
+    }
+
+    .src-btn {
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 11px;
+        margin: 4px 2px;
+
+    }
+
+
+    .palce-line .search {
+
+        align-items: left;
+        justify-content: left;
+
+    }
+
+    .place .palce-line .time_day {
+
+        align-items: left;
+        justify-content: left;
+
+    }
+
+    .place .palce-line .country {
+        align-items: left;
+        justify-content: left;
+    }*/
+
+}

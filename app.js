@@ -25,7 +25,7 @@ let weatherItemsDay_idElement = null;
 
 let days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
 let months = ["Ocak", "Şubat", "Mart", " Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
-//let sehirler = ["İstanbul", "Ankara", "İzmir", "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Aksaray", "Amasya", "Antalya", "Ardahan", "Artvin", "Aydın", "Balıkesir", "Bartın"," Batman", "Bayburt", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale"," Çankırı", "Çorum"," Denizli", "Diyarbakır", "Düzce", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun"," Gümüşhane"," Hakkari", "Hatay", "Iğdır", "Isparta", "Kahramanmaraş"," Karabük", "Karaman", "Kars", "Kastamonu", "Kayseri"," Kırıkkale", "Kırklareli", "Kırşehir", "Kilis"," Kocaeli"," Konya"," Kütahya"," Malatya"," Manisa", "Mardin", "Mersin", "Muğla", "Muş"," Nevşehir"," Niğde", "Ordu"," Osmaniye", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop"," Sivas"," Şırnak", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yalova", "Yozgat", "Zonguldak"]
+let sehirler = ["İstanbul", "Ankara", "İzmir", "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Aksaray", "Amasya", "Antalya", "Ardahan", "Artvin", "Aydın", "Balıkesir", "Bartın"," Batman", "Bayburt", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale"," Çankırı", "Çorum"," Denizli", "Diyarbakır", "Düzce", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun"," Gümüşhane"," Hakkari", "Hatay", "Iğdır", "Isparta", "Kahramanmaraş"," Karabük", "Karaman", "Kars", "Kastamonu", "Kayseri"," Kırıkkale", "Kırklareli", "Kırşehir", "Kilis"," Kocaeli"," Konya"," Kütahya"," Malatya"," Manisa", "Mardin", "Mersin", "Muğla", "Muş"," Nevşehir"," Niğde", "Ordu"," Osmaniye", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop"," Sivas"," Şırnak", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yalova", "Yozgat", "Zonguldak"]
 
 window.addEventListener('DOMContentLoaded', (event) => {
     timeElement = document.getElementById("time");
@@ -72,16 +72,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (searchElement.value.length === 0) {
             Swal.fire({
                 title: "Bu Alan Boş Bırakılamaz",
-                text: "Lütfen Bir Şehir/İlçe İsmi Giriniz !",
+                text: "Lütfen Bir Şehir İsmi Giriniz !",
                 icon: "error",
                 buttons: true,
                 dangerMode: true,
 
             })
         }
+        if (searchElement.value.length != sehirler) {
+            Swal.fire({
+                title: "Şehir Bulunamadı",
+                text: "Lütfen Şehir ismini Doğru Girdiğinize Emin Olunuz !",
+                icon: "error",
+                buttons: true,
+                dangerMode: true,
+
+            })
+        } 
 
         else {
             getWeatherData(searchElement.value);
+
+
         }
         e.preventDefault();
     });

@@ -8,28 +8,35 @@
 
 body {
     background: url(https://wallpaperaccess.com/full/1540016.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
-    overflow: hidden;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
+    overflow-y:scroll;
 }
 
-.card {
+.container-fluid {
     padding: 20px 70px;
     color: white;
 }
 
-.info {
+.row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
 }
 
-
-/*Left Time START*/
 .date_time {
     font-weight: 100;
+    background-color: rgba(40, 41, 41, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: end;
+    font-family: 'Poppins', sans-serif;
+
+
 }
 
 .date_time .time {
@@ -45,207 +52,90 @@ body {
     font-size: 35px;
 }
 
-/* Time END */
-
-
-
-/* Humidity/Pressure/Wind_speed START */
-
-.info .cites {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(40, 41, 41, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-    border: 1px solid white;
-}
-
-.info .cites .weather-items {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-/* Humidity/Pressure/Wind_speed END */
-
-
-/* Under/ForecastWeather START */
-.future-weather {
-    background-color: rgba(40, 41, 41, 0.8);
-    padding: 25px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    color: white;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    overflow-y: hidden;
-}
-
-.future-weather .today {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-
-    padding: 30px;
-    padding-right: 45px;
-    padding-bottom: 40px;
-    border-radius: 55px;
-    background: rgba(0, 0, 0, 0.2)
-}
-
-.future-weather .today .day {
-    padding: 5px 15px;
-    background: #343333;
-    border-radius: 50px;
-    text-align: center;
-
-}
-
-.future-weather .today .temp {
-    font-size: 20px;
-    padding-top: 15px;
-}
-
-.future-weather .weather-forecast {
-    display: flex;
-
-}
-
-.future-weather .weather-forecast-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    padding: 15px;
-    border: 1px solid #ffffff;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.future-weather .weather-forecast-item .day {
-    padding: 5px 15px;
-    background: #343333;
-    border-radius: 50px;
-    text-align: center;
-
-
-}
-
-.future-weather .weather-forecast-item .temp {
-    font-weight: 100;
-    font-size: 15px;
-}
-
-/* Under/ForecastWeather END */
-
-/* Right START*/
-
 .place {
-    text-align: end;
-}
-
-.palce-line {
-    background-color: rgba(40, 41, 41, 0.8);
-    padding: 25px;
-    border-radius: 20px;
-    bottom: 0;
-    color: white;
-    overflow-x: hidden;
-    right: 0;
-    width: 100%;
-    padding-bottom: 2px;
-    justify-content: center;
-    align-items: center;
+    text-align: start;
+    padding:20px ;
+    font-family: 'Poppins', sans-serif;
 
 }
 
-/*Right search bar Start*/
-.src-btn {
+.place .time_day {
+    font-size: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+
+}
+
+.place .country {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+}
+
+.todayWeather {
     background-color: rgba(40, 41, 41, 0.6);
-    background: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 10px;
     font-size: 20px;
-    margin: 4px 2px;
-    display: inline-block;
+    display: flex;
+    margin: 10px 0;
+    font-weight: 100;
+    justify-content: space-between;
+    overflow-y: hidden;
+    padding: 25px;
+    overflow-y: hidden;
+
+}
+
+.search {
+    color: #ffffff;
+    padding:20px ;
+    
+
+
 
 }
 
 .search-bar {
     background-color: rgba(40, 41, 41, 0.6);
-    background: transparent;
     border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 10px;
+    padding: 14px 45px;
+    cursor: pointer;
+    font-size: 10px;
+    margin: 5px 2px;
+    color: #eee;
+
+
+}
+
+.src-btn {
+    background-color: rgba(40, 41, 41, 0.6);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 14px 35px;
     cursor: auto;
-    font-size: 20px;
+    font-size: 10px;
     margin: 4px 2px;
     color: white;
-
-}
-
-.palce-line .search {
-    margin-bottom: 3em;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 30px;
-    padding-right: 50px;
-    padding-bottom: 40px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.2)
-}
-
-/*Right search bar END*/
-
-/* CtiyName/NE START */
-.place .time-day {
-    font-size: 35px;
-    font-weight: 100;
-}
-
-.place .country {
-    font-size: 10px;
-    font-weight: 300;
-
-}
-
-.place .palce-line .time_day {
-    font-size: 40px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 100;
 
 }
 
-.place .palce-line .country {
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 100;
-}
-
-/* CtiyName/NE END */
-
-/* FeelTemp/Cloud/Snow/Rain START*/
 .weatherItemsDay {
-    background-color: rgba(40, 41, 41, 0.8);
+    background-color: rgba(40, 41, 41, 0.6);
+    border: 1px solid white;
+    border-radius: 5px;
     padding: 25px;
     bottom: 0;
-    display: flex;
-    color: white;
-    width: 100%;
-    align-items: center;
+    width: 60%;
+    margin: 10px 0;
+    font-weight: 100;
     justify-content: space-between;
+    display: flex;
     overflow-y: hidden;
-    border-radius: 20px;
+    font-size: 25px;
 
 }
 
@@ -257,193 +147,88 @@ body {
     margin: 0 10px;
     padding: 15px;
     border-radius: 20px;
-
 }
 
-.weatherItemsDay .weatherItemsDay_id .feelslike {
+.weatherItemsDay .weatherItemsDay_id .items {
     padding: 5px 15px;
     border-radius: 50px;
     text-align: center;
 
 }
 
-.weatherItemsDay .weatherItemsDay_id .feelslike .forecast {
+.col-12{
+    
+    background-color: rgba(40, 41, 41, 0.8);
+    padding: 25px;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
 
+.today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    padding: 30px;
+    padding-right: 45px;
+    padding-bottom: 40px;
+    border-radius: 55px;
+    background: rgba(0, 0, 0, 0.2)
+   
+}
+
+.today .day {
+    padding: 5px 15px;
+    background: #343333;
+    border-radius: 50px;
+    text-align: center;
+
+}
+
+.today .temp {
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.weather-forecast {
+    display: flex;
+
+}
+
+ .weather-forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.weather-forecast-item .day {
+    
+    padding: 5px 15px;
+    background: #343333;
+    border-radius: 50px;
+    text-align: center;
+
+}
+
+ .weather-forecast-item .temp {
     font-weight: 100;
     font-size: 15px;
 }
 
-/* FeelTemp/Cloud/Snow/Rain END*/
-
-/* Temp/Sunrise/Sunset START*/
-
-.info .todayWeather {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(40, 41, 41, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-    border: 1px solid white;
-    font-size: 19px;
-}
-
-.info .todayWeather .air_temperature {
-    display: flex;
-    align-items: center;
-}
-
-.info .todayWeather .sunset {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.info .todayWeather .sunrise {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Temp/Sunrise/Sunset END */
-
-@media only screen and (max-width:730px) {
 
 
 
-    .card {
-        padding: 20px;
-    }
-
-    .date_time .date {
-        font-size: 20px;
-    }
-
-    .date_time .time {
-        font-size: 50px
-    }
-
-    .date_time .ap-pm {
-        font-size: 20px;
-    }
-
-    .date_time .year {
-        font-size: 10px;
-    }
-
-    .info .todayWeather .air_temperature {
-        font-size: 13px;
-        object-fit: fill;
-
-    }
-
-    .info .todayWeather .sunset {
-        font-size: 13px;
-        object-fit: fill;
-
-    }
-
-    .info .todayWeather .sunrise {
-        font-size: 13px;
-        object-fit: fill;
-
-    }
-
-    .weather-items {
-        font-size: 13px;
-    }
-
-    .future-weather {
-        justify-content: start;
-        align-items: none;
-        overflow-y: scroll;
-
-    }
-
-    .future-weather.today.temp {
-        font-size: 16px;
-    }
-    
-
-    
-
-    @media only screen and (max-width: 1400px){
-        .future-weather{
-            justify-content: start;
-            align-items: none;
-            overflow-x: scroll;
-        }
-    }
-
-    /*
-  
-
-    .place .palce-line {
-        text-align: end;
-        margin-top: 15px;
-    }
-
-    .place .palce-line .time_day {
-        font-size: 20px;
-    }
-
-
-    .place .weatherItemsDay {
-        text-align: end;
-        margin-top: 15px;
-    }
 
 
 
-    .place .palce-line .country {
-        font-size: 13px;
-    }
 
-    .search-bar {
-        background-color: rgba(40, 41, 41, 0.6);
-        background: transparent;
-        border: 1px solid #ffffff;
-        border-radius: 5px;
-        padding: 1px;
-        cursor: auto;
-        font-size: 13px;
-        margin: 4px 2px;
-        color: white;
-
-    }
-
-    .palce-line .search {
-
-        padding: 3px;
-
-    }
-
-    .src-btn {
-        border-radius: 5px;
-        padding: 5px;
-        font-size: 11px;
-        margin: 4px 2px;
-
-    }
-
-
-    .palce-line .search {
-
-        align-items: left;
-        justify-content: left;
-
-    }
-
-    .place .palce-line .time_day {
-
-        align-items: left;
-        justify-content: left;
-
-    }
-
-    .place .palce-line .country {
-        align-items: left;
-        justify-content: left;
-    }*/
-
-}

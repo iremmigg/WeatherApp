@@ -68,10 +68,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     getWeatherData();
     srcBtnElement.addEventListener("click", (event) => {
-        if (searchElement.value.length === 0) {
+        if ( location.name !== searchElement.value  ) {
             Swal.fire({
-                title: "Bu Alan Boş Bırakılamaz",
-                text: "Lütfen Bir Şehir İsmi Giriniz !",
+                title: "Yanlış Konum ",
+                text: "Lütfen Konumu Tekrar Giriniz!",
                 icon: "error",
                 buttons: true,
                 dangerMode: true,

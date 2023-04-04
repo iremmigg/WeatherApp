@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
         }
-        e.preventDefault();
+        
     });
 
 
@@ -123,9 +123,6 @@ function showWeatherData(data) {
         longitude: "",
         cityy: "",
 
-
-
-
     };
 
    
@@ -133,12 +130,6 @@ function showWeatherData(data) {
     itemsDataJson.longitude = data.location.lon;
     itemsDataJson.cityy = data.location.name;
 
-
-
-
-
-
-    
     timeDayElement.innerHTML = `
         <div class="time_day" id="time_day" >${itemsDataJson.cityy} </div>
     `
@@ -198,7 +189,7 @@ function showWeatherData(data) {
             weatherItemsDayElement.innerHTML = `
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
               <div class="items" id="feelslike"></div>
-              <img src="img/feel.png" alt="feel" width="60" height="60">
+              <img src="img/feel.png" alt="feel"  width="80" height="80">
               <div class="forecast">Hissedilen Sıcaklık</div>
               <div class="forecast">${otherDayForcastDataJson.feel}&#176;C</div>
             </div>
@@ -206,14 +197,14 @@ function showWeatherData(data) {
 
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
                 <div class="items" id="cloud"></div>
-                <img src="img/cloud.png" alt="cloud"width="60" height="60">
+                <img src="img/cloud.png" alt="cloud" width="80" height="80">
                 <div class="forecast">Bulutluluk Oranı</div>
                 <div class="forecast">${otherDayForcastDataJson.cloud}%</div>
             </div>
     
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
                 <div class="items" id="snow"></div>
-                <img src="img/snow.png" alt="snow" width="60" height="60">
+                <img src="img/snow.png" alt="snow" width="80" height="80">
                 <div class="forecast">Kar Olasılığı</div>
                 <div class="forecast">${otherDayForcastDataJson.snow}%</div>
             </div>
@@ -221,28 +212,28 @@ function showWeatherData(data) {
     
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
                 <div lass="items" id="rain" ></div>
-                <img src="img/rain.png" alt="rain" width="60" height="60">
+                <img src="img/rain.png" alt="rain" width="80" height="80">
                 <div class="forecast">Yağmur Olasılığı</div>
                 <div class="forecast">${otherDayForcastDataJson.rain}%</div>
             </div>
 
              <div class="weatherItemsDay_id" id="weatherItemsDay_id">
                 <div class="items" id="feelslike"></div>
-                <img src="img/wind.png" alt="feel" width="60" height="60">
+                <img src="img/wind.png" alt="feel" width="80" height="80">
                 <div class="forecast">Rüzgar Hızı</div>
                 <div class="forecast">${otherDayForcastDataJson.wind_kph}</div>
             </div>
 
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
                 <div class="items" id="feelslike"></div>
-                <img src="img/pressure.png" alt="feel" width="60" height="60">
+                <img src="img/pressure.png" alt="feel" width="80" height="80">
                 <div class="forecast">Basınç</div>
                 <div class="forecast">${otherDayForcastDataJson.preasure}</div>
             </div>
 
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
                 <div class="items" id="feelslike"></div>
-                <img src="img/humidity.png" alt="feel" width="60" height="60">
+                <img src="img/humidity.png" alt="feel" width="80" height="80">
                 <div class="forecast">Nem Oranı</div>
                 <div class="forecast">${otherDayForcastDataJson.humidity}%</div>
             </div>
@@ -252,19 +243,19 @@ function showWeatherData(data) {
 
             todayWeatherElement.innerHTML = `
                 <div class="air_temperature" id="air_temperature">
-                <img src=${otherDayForcastDataJson.icon} alt="weather-icon" class="weather-icon">
-                <div>Sıcaklık </div> 
-                <div>${otherDayForcastDataJson.temp}&#176;C</div>
+                    <img src=${otherDayForcastDataJson.icon} alt="weather-icon" class="weather-icon" width="80" height="80">
+                    <div>Sıcaklık </div> 
+                    <div>${otherDayForcastDataJson.temp}&#176;C</div>
                 </div>
 
                 <div class="sunrise" id="sunrise">
-                    <img src="img/sunrise.png"alt="weather-icon" class="weather-icon"  width="60" height="60">
+                    <img src="img/sunrise.png"alt="weather-icon" class="weather-icon"  width="80" height="80">
                     <div>Gün Doğumu</div>
                     <div>${otherDayForcastDataJson.sunrise}</div>
                 </div>
                 
                 <div class="sunset" id="sunset">
-                    <img src="img/sunset.png"  alt="weather-icon" class="weather-icon" width="60" height="60">
+                    <img src="img/sunset.png"  alt="weather-icon" class="weather-icon" width="80" height="80">
                     <div>Gün Batımı </div>
                     <div>${otherDayForcastDataJson.sunset}</div>
                 </div>

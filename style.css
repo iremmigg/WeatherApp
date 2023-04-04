@@ -12,7 +12,7 @@ body {
     background-size: cover;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 .container-fluid {
@@ -35,6 +35,7 @@ body {
     margin: 10px 0;
     text-align: end;
     font-family: 'Poppins', sans-serif;
+    display: block;
 
 
 }
@@ -54,7 +55,7 @@ body {
 
 .place {
     text-align: start;
-    padding:20px ;
+    padding: 20px;
     font-family: 'Poppins', sans-serif;
 
 }
@@ -78,19 +79,59 @@ body {
     border-radius: 10px;
     font-size: 20px;
     display: flex;
-    margin: 10px 0;
     font-weight: 100;
     justify-content: space-between;
+    padding: 20px;
     overflow-y: hidden;
-    padding: 25px;
-    overflow-y: hidden;
+
+
 
 }
 
+.todayWeather .air_temperature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 15px;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.todayWeather .sunset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 15px;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.todayWeather .sunrise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 15px;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+
 .search {
     color: #ffffff;
-    padding:20px ;
-    
+    padding: 20px;
+
 
 
 
@@ -129,13 +170,14 @@ body {
     border-radius: 5px;
     padding: 25px;
     bottom: 0;
-    width: 60%;
     margin: 10px 0;
     font-weight: 100;
     justify-content: space-between;
     display: flex;
     overflow-y: hidden;
     font-size: 25px;
+
+
 
 }
 
@@ -156,8 +198,8 @@ body {
 
 }
 
-.col-12{
-    
+.col-12 {
+
     background-color: rgba(40, 41, 41, 0.8);
     padding: 25px;
     bottom: 0;
@@ -178,7 +220,6 @@ body {
     padding-bottom: 40px;
     border-radius: 55px;
     background: rgba(0, 0, 0, 0.2)
-   
 }
 
 .today .day {
@@ -199,7 +240,7 @@ body {
 
 }
 
- .weather-forecast-item {
+.weather-forecast-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,7 +253,7 @@ body {
 }
 
 .weather-forecast-item .day {
-    
+
     padding: 5px 15px;
     background: #343333;
     border-radius: 50px;
@@ -220,15 +261,15 @@ body {
 
 }
 
- .weather-forecast-item .temp {
+.weather-forecast-item .temp {
     font-weight: 100;
     font-size: 15px;
 }
 
 
+@media screen and (max-width:576px){
+    .day_time{
+    display:none;
+    }
 
-
-
-
-
-
+}

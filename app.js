@@ -69,17 +69,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getWeatherData();
    
     srcBtnElement.addEventListener("click", (event) => {
-       if (searchElement.value !== Object.error ) {
+       if (searchElement.value === ) {
 
-          
-        getWeatherData(searchElement.value);
-           
-            
-          
-        }
-       
-
-        else {
             Swal.fire({
                 title: "Yanlış Konum ",
                 text: "Lütfen Konumu Tekrar Giriniz!",
@@ -88,6 +79,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 dangerMode: true,
 
             })
+       
+           
+            
+          
+        }
+       
+
+        else { 
+            getWeatherData(searchElement.value);
+          
            
            
         }
@@ -108,7 +109,7 @@ function getWeatherData(location = "Eskisehir") {
         fetch(`http://api.weatherapi.com/v1/forecast.json?key=6237294a99f54ffabab70115230404&q=${location}&days=7`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                console.log(data.hasOwnProperty('error'))
                 showWeatherData(data);
             })
     },

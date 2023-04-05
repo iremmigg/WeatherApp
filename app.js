@@ -67,8 +67,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
     getWeatherData();
+   
     srcBtnElement.addEventListener("click", (event) => {
-        if ( location.name !== searchElement.value  ) {
+       if (searchElement.value !== Object.error ) {
+
+          
+        getWeatherData(searchElement.value);
+           
+            
+          
+        }
+       
+
+        else {
             Swal.fire({
                 title: "Yanlış Konum ",
                 text: "Lütfen Konumu Tekrar Giriniz!",
@@ -77,13 +88,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 dangerMode: true,
 
             })
-        }
-       
-
-        else {
-            getWeatherData(searchElement.value);
-
-
+           
+           
         }
         
     });
@@ -221,14 +227,14 @@ function showWeatherData(data) {
                 <div class="items" id="feelslike"></div>
                 <img src="img/wind.png" alt="feel" width="80" height="80">
                 <div class="forecast">Rüzgar Hızı</div>
-                <div class="forecast">${otherDayForcastDataJson.wind_kph}</div>
+                <div class="forecast">${otherDayForcastDataJson.wind_kph} km/s</div>
             </div>
 
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
                 <div class="items" id="feelslike"></div>
                 <img src="img/pressure.png" alt="feel" width="80" height="80">
                 <div class="forecast">Basınç</div>
-                <div class="forecast">${otherDayForcastDataJson.preasure}</div>
+                <div class="forecast">${otherDayForcastDataJson.preasure}hPa</div>
             </div>
 
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">

@@ -143,9 +143,9 @@ body {
     border-radius: 5px;
     padding: 14px 45px;
     cursor: pointer;
-    font-size: 10px;
     margin: 5px 2px;
     color: #eee;
+    font-size: 20px;
 
 
 }
@@ -156,7 +156,7 @@ body {
     border-radius: 5px;
     padding: 14px 35px;
     cursor: auto;
-    font-size: 10px;
+    font-size: 15px;
     margin: 4px 2px;
     color: white;
     justify-content: center;
@@ -267,9 +267,62 @@ body {
 }
 
 
-@media screen and (max-width:576px){
-    .day_time{
-    display:none;
+@media screen and (max-width:576px) {
+    .date_time{
+        display: none;
     }
 
+    .weatherItemsDay .weatherItemsDay_id {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        padding: 15px;
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+
+    }
+
+
+    .todayWeather .air_temperature {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #eee;
+        padding: 30px;
+        padding-right: 45px;
+        padding-bottom: 40px;
+        border-radius: 55px;
+        background: rgba(0, 0, 0, 0.2)
+    }
+
+    .todayWeather .sunset {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        padding: 15px;
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+    }
+
+    .todayWeather .sunrise {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        padding: 15px;
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+    }
+
+
+}
+input::placeholder {
+    font: 15px/2 sans-serif;
+    color: #eee;
 }

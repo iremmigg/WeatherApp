@@ -69,8 +69,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getWeatherData();
    
     srcBtnElement.addEventListener("click", (event) => {
-       if (searchElement.value === ) {
+       if (searchElement.value !== Object.error ) {
 
+          
+        getWeatherData(searchElement.value);
+           
+            
+          
+        }
+       
+
+        else {
             Swal.fire({
                 title: "Yanlış Konum ",
                 text: "Lütfen Konumu Tekrar Giriniz!",
@@ -79,16 +88,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 dangerMode: true,
 
             })
-       
-           
-            
-          
-        }
-       
-
-        else { 
-            getWeatherData(searchElement.value);
-          
            
            
         }
@@ -109,7 +108,7 @@ function getWeatherData(location = "Eskisehir") {
         fetch(`http://api.weatherapi.com/v1/forecast.json?key=6237294a99f54ffabab70115230404&q=${location}&days=7`)
             .then(response => response.json())
             .then(data => {
-                console.log(data.hasOwnProperty('error'))
+                console.log(data.hasOwnProperty())
                 showWeatherData(data);
             })
     },
@@ -194,6 +193,18 @@ function showWeatherData(data) {
         if (i == 0) {
 
             weatherItemsDayElement.innerHTML = `
+            <div class="sunrise" id="sunrise">
+                <img src="img/sunrise.png"alt="weather-icon" class="weather-icon"  width="80" height="80">
+                <div>Gün Doğumu</div>
+                <div>${otherDayForcastDataJson.sunrise}</div>
+            </div>
+        
+            <div class="sunset" id="sunset">
+                <img src="img/sunset.png"  alt="weather-icon" class="weather-icon" width="80" height="80">
+                <div>Gün Batımı </div>
+                <div>${otherDayForcastDataJson.sunset}</div>
+            </div>
+
             <div class="weatherItemsDay_id" id="weatherItemsDay_id">
               <div class="items" id="feelslike"></div>
               <img src="img/feel.png" alt="feel"  width="80" height="80">
@@ -244,6 +255,8 @@ function showWeatherData(data) {
                 <div class="forecast">Nem Oranı</div>
                 <div class="forecast">${otherDayForcastDataJson.humidity}%</div>
             </div>
+
+            
  
          
          `
@@ -254,19 +267,6 @@ function showWeatherData(data) {
                     <div>Sıcaklık </div> 
                     <div>${otherDayForcastDataJson.temp}&#176;C</div>
                 </div>
-
-                <div class="sunrise" id="sunrise">
-                    <img src="img/sunrise.png"alt="weather-icon" class="weather-icon"  width="80" height="80">
-                    <div>Gün Doğumu</div>
-                    <div>${otherDayForcastDataJson.sunrise}</div>
-                </div>
-                
-                <div class="sunset" id="sunset">
-                    <img src="img/sunset.png"  alt="weather-icon" class="weather-icon" width="80" height="80">
-                    <div>Gün Batımı </div>
-                    <div>${otherDayForcastDataJson.sunset}</div>
-                </div>
-    
                 `
 
             todayTempElement.innerHTML = `

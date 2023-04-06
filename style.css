@@ -97,28 +97,32 @@ body.dark .date_time {
 }
 
 body.light .todayWeather {
-    background-color: rgba(40, 41, 41, 0.6);
+    
     font-family: 'Poppins', sans-serif;
     border-radius: 10px;
-    font-size: 35px;
+    font-size: 60px;
     display: flex;
     font-weight: 100;
     justify-content: space-between;
     padding: 20px;
+    text-align: end;
+    
     
 
 
 
 }
 body.dark .todayWeather {
-    background-color:rgba(196, 215, 215, 0.4);
+    
     font-family: 'Poppins', sans-serif;
     border-radius: 10px;
-    font-size: 35px;
+    font-size: 60px;
     display: flex;
     font-weight: 100;
     justify-content: space-between;
     padding: 20px;
+    text-align: end;
+    
     
 
 
@@ -191,7 +195,7 @@ body.light  .search-bar {
     cursor: pointer;
     margin: 5px 2px;
     color: #eee;
-    font-size: 20px;
+    font-size: 14px;
 
 
 }
@@ -203,7 +207,7 @@ body.dark  .search-bar {
     cursor: pointer;
     margin: 5px 2px;
     color: #eee;
-    font-size: 20px;
+    font-size: 14px;
 
 
 }
@@ -211,9 +215,9 @@ body.light .src-btn {
     background-color: rgba(40, 41, 41, 0.6);
     border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 14px 35px;
+    padding: 8px 28px;
     cursor: auto;
-    font-size: 15px;
+    font-size: 14px;
     margin: 4px 2px;
     color: white;
     justify-content: center;
@@ -224,14 +228,13 @@ body.dark .src-btn {
     background-color: rgba(172, 196, 196, 0.4);
     border: 1px solid #294045;
     border-radius: 5px;
-    padding: 14px 35px;
+    padding: 8px 28px;
     cursor: auto;
-    font-size: 15px;
+    font-size: 14px;
     margin: 4px 2px;
     color: white;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-
 }
 
 body.light .weatherItemsDay {
@@ -253,7 +256,7 @@ body.light .weatherItemsDay {
 
 body.dark .weatherItemsDay {
     background-color: rgba(196, 215, 215, 0.4);
-    border: 1px solid white;
+    border: 1px solid #294045;
     border-radius: 5px;
     padding: 25px;
     bottom: 0;
@@ -299,6 +302,7 @@ body.light .col-12 {
 body.dark .col-12 {
 
     background-color: rgba(160, 189, 189, 0.6); 
+
     padding: 25px;
     bottom: 0;
     display: flex;

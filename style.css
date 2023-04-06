@@ -7,25 +7,28 @@
 }
 
 body.light {
-    background: url(https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/iStock-104472907-ec1d53a7c5724086414f13ae0dab8e1b.jpg);
+    background: url(https://wallpaperaccess.com/full/1540016.jpg);
     background-repeat: repeat;
     background-size: cover;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     overflow-y: scroll;
+    
 }
 body.dark {
-    background: url(https://i.pinimg.com/originals/32/19/b5/3219b5bacd3c712241660b5465785e8c.jpg);
+    background: url(https://images.unsplash.com/photo-1536543857086-85cb8a7791c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80);
     background-repeat: repeat;
     background-size: cover;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     overflow-y: scroll;
+    
 }
 
 .container-fluid {
     padding: 20px 70px;
     color: white;
+    
 }
 
 .row {
@@ -35,9 +38,21 @@ body.dark {
 
 }
 
-.date_time {
+body.light .date_time {
     font-weight: 100;
     background-color: rgba(40, 41, 41, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: end;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+
+
+}
+body.dark .date_time {
+    font-weight: 100;
+    background-color: rgba(196, 215, 215, 0.4);
     padding: 20px;
     border-radius: 10px;
     margin: 10px 0;
@@ -81,7 +96,7 @@ body.dark {
     font-weight: 100;
 }
 
-.todayWeather {
+body.light .todayWeather {
     background-color: rgba(40, 41, 41, 0.6);
     font-family: 'Poppins', sans-serif;
     border-radius: 10px;
@@ -95,19 +110,35 @@ body.dark {
 
 
 }
+body.dark .todayWeather {
+    background-color:rgba(196, 215, 215, 0.4);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    font-size: 35px;
+    display: flex;
+    font-weight: 100;
+    justify-content: space-between;
+    padding: 20px;
+    
 
-.todayWeather .air_temperature {
+
+
+}
+
+.air_temperature {
+    align-items: center;
+}
+/*.todayWeather .air_temperature {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
     padding: 15px;
     border-radius: 20px;
     padding: 5px 15px;
     border-radius: 50px;
     text-align: center;
-}
+}*/
 
 .sunset {
     display: flex;
@@ -135,8 +166,7 @@ body.dark {
     text-align: center;
 }
 
-
-.search {
+body.light .search {
     color: #ffffff;
     padding: 20px;
 
@@ -145,7 +175,15 @@ body.dark {
 
 }
 
-.search-bar {
+body.dark .search {
+    color: #000000;
+    padding: 20px;
+
+
+
+
+}
+body.light  .search-bar {
     background-color: rgba(40, 41, 41, 0.6);
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -157,8 +195,19 @@ body.dark {
 
 
 }
+body.dark  .search-bar {
+    background-color: rgba(172, 196, 196, 0.4);
+    border: 1px solid #294045;
+    border-radius: 5px;
+    padding: 14px 45px;
+    cursor: pointer;
+    margin: 5px 2px;
+    color: #eee;
+    font-size: 20px;
 
-.src-btn {
+
+}
+body.light .src-btn {
     background-color: rgba(40, 41, 41, 0.6);
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -171,9 +220,39 @@ body.dark {
     font-family: 'Poppins', sans-serif;
 
 }
+body.dark .src-btn {
+    background-color: rgba(172, 196, 196, 0.4);
+    border: 1px solid #294045;
+    border-radius: 5px;
+    padding: 14px 35px;
+    cursor: auto;
+    font-size: 15px;
+    margin: 4px 2px;
+    color: white;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
 
-.weatherItemsDay {
+}
+
+body.light .weatherItemsDay {
     background-color: rgba(40, 41, 41, 0.6);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 25px;
+    bottom: 0;
+    margin: 10px 0;
+    font-weight: 100;
+    justify-content: space-between;
+    display: flex;
+    overflow-y: hidden;
+    font-size: 25px;
+
+
+
+}
+
+body.dark .weatherItemsDay {
+    background-color: rgba(196, 215, 215, 0.4);
     border: 1px solid white;
     border-radius: 5px;
     padding: 25px;
@@ -205,10 +284,21 @@ body.dark {
     text-align: center;
 
 }
+body.light .col-12 {
 
-.col-12 {
+    background-color: rgba(40, 41, 41, 0.8); 
+    padding: 25px;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
 
-    background-color: rgba(40, 41, 41, 0.8);
+body.dark .col-12 {
+
+    background-color: rgba(160, 189, 189, 0.6); 
     padding: 25px;
     bottom: 0;
     display: flex;
@@ -338,13 +428,21 @@ input::placeholder {
     color: #eee;
 }
 
-.btn{
+body.light .btn{
     border: 0;
     padding: 10px 25px;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    background-color: #343333;
+    background-color: rgba(216, 202, 202, 0.5);;
+}
+body.dark .btn{
+    border: 0;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(216, 202, 202, 0.5);;
 }
 
 
@@ -373,3 +471,24 @@ input[type="checkbox"] {
 .check::before{
 
 }*/
+
+.col-11{
+    background-color: rgba(40, 41, 41, 0.0);
+    padding: 25px;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+.col-1{
+    background-color: rgba(40, 41, 41, 0.0);
+    padding: 25px;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}

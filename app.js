@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
    
     srcBtnElement.addEventListener("click", (event) => {
       
-          
+        
         getWeatherData(searchElement.value);
            
             
@@ -84,6 +84,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 });
+/*function showSweatAlert(data){
+
+    let alert = data.error.message;
+
+    Swal.fire({
+        title: "Yanlış Konum ",
+        text: "Lütfen Konumu Tekrar Giriniz!",
+        icon: "error",
+        buttons: true,
+        dangerMode: true,
+
+    })
+}*/
 
 
 
@@ -95,19 +108,12 @@ function getWeatherData(location = "Eskisehir") {
             .then(response => response.json())
             .then(data => {
                 if (console.log(data.hasOwnProperty('error'))) {
-                    Swal.fire({
-                        title: "Yanlış Konum ",
-                        text: "Lütfen Konumu Tekrar Giriniz!",
-                        icon: "error",
-                        buttons: true,
-                        dangerMode: true,
-        
-                    })
-                   
+                    console.log(error)
+                    showSweatAlert()
                 }
                 else{
-                console.log(data)
-                showWeatherData(data);
+                 console.log(data)
+                 showWeatherData(data);
                 }
                 
             })

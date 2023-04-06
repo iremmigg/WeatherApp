@@ -13,8 +13,9 @@ body.light {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     overflow-y: scroll;
-    
+
 }
+
 body.dark {
     background: url(https://images.unsplash.com/photo-1536543857086-85cb8a7791c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80);
     background-repeat: repeat;
@@ -22,13 +23,13 @@ body.dark {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     overflow-y: scroll;
-    
+
 }
 
 .container-fluid {
     padding: 20px 70px;
     color: white;
-    
+
 }
 
 .row {
@@ -50,6 +51,7 @@ body.light .date_time {
 
 
 }
+
 body.dark .date_time {
     font-weight: 100;
     background-color: rgba(196, 215, 215, 0.4);
@@ -86,52 +88,36 @@ body.dark .date_time {
 .place .time_day {
     font-size: 80px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 100;
+    font-weight: 150;
 
 }
 
 .place .country {
     font-size: 30px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 100;
+    font-weight: 150;
 }
 
-body.light .todayWeather {
-    
+.todayWeather {
+
     font-family: 'Poppins', sans-serif;
     border-radius: 10px;
     font-size: 60px;
     display: flex;
-    font-weight: 100;
+    font-weight: 200;
     justify-content: space-between;
     padding: 20px;
-    text-align: end;
-    
-    
-
+    margin-left: 5%;
+    margin-right: 10%;
 
 
 }
-body.dark .todayWeather {
-    
-    font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
-    font-size: 60px;
-    display: flex;
-    font-weight: 100;
-    justify-content: space-between;
-    padding: 20px;
-    text-align: end;
-    
-    
 
-
-
-}
 
 .air_temperature {
     align-items: center;
 }
+
 /*.todayWeather .air_temperature {
     display: flex;
     flex-direction: column;
@@ -157,7 +143,7 @@ body.dark .todayWeather {
     text-align: center;
 }
 
- .sunrise {
+.sunrise {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,7 +173,8 @@ body.dark .search {
 
 
 }
-body.light  .search-bar {
+
+body.light .search-bar {
     background-color: rgba(40, 41, 41, 0.6);
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -199,7 +186,8 @@ body.light  .search-bar {
 
 
 }
-body.dark  .search-bar {
+
+body.dark .search-bar {
     background-color: rgba(172, 196, 196, 0.4);
     border: 1px solid #294045;
     border-radius: 5px;
@@ -211,6 +199,7 @@ body.dark  .search-bar {
 
 
 }
+
 body.light .src-btn {
     background-color: rgba(40, 41, 41, 0.6);
     border: 1px solid #ffffff;
@@ -224,6 +213,7 @@ body.light .src-btn {
     font-family: 'Poppins', sans-serif;
 
 }
+
 body.dark .src-btn {
     background-color: rgba(172, 196, 196, 0.4);
     border: 1px solid #294045;
@@ -287,9 +277,10 @@ body.dark .weatherItemsDay {
     text-align: center;
 
 }
+
 body.light .col-12 {
 
-    background-color: rgba(40, 41, 41, 0.8); 
+    background-color: rgba(40, 41, 41, 0.8);
     padding: 25px;
     bottom: 0;
     display: flex;
@@ -301,7 +292,7 @@ body.light .col-12 {
 
 body.dark .col-12 {
 
-    background-color: rgba(160, 189, 189, 0.6); 
+    background-color: rgba(160, 189, 189, 0.6);
 
     padding: 25px;
     bottom: 0;
@@ -370,7 +361,13 @@ body.dark .col-12 {
 
 
 @media screen and (max-width:576px) {
-    .date_time {
+    .date_time .time {
+        display: none;
+    }
+    .date_time .date {
+        display: none;
+    }
+    .date_time .year{
         display: none;
     }
 
@@ -388,21 +385,13 @@ body.dark .col-12 {
     }
 
 
-    .todayWeather .air_temperature {
-        font-size: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #eee;
-        padding: 30px;
-        padding-right: 45px;
-        padding-bottom: 40px;
-        border-radius: 55px;
-        background: rgba(0, 0, 0, 0.2);
-        text-align: end;
+    .air_temperature {
+
+        margin-left: 40%;
+        margin-right: 10%;
     }
 
-     .sunset {
+    .sunset {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -413,7 +402,7 @@ body.dark .col-12 {
         border-radius: 20px;
     }
 
-     .sunrise {
+    .sunrise {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -432,21 +421,24 @@ input::placeholder {
     color: #eee;
 }
 
-body.light .btn{
+body.light .btn {
     border: 0;
     padding: 10px 25px;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    background-color: rgba(216, 202, 202, 0.5);;
+    background-color: rgba(216, 202, 202, 0.5);
+    ;
 }
-body.dark .btn{
+
+body.dark .btn {
     border: 0;
     padding: 10px 25px;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    background-color: rgba(216, 202, 202, 0.5);;
+    background-color: rgba(216, 202, 202, 0.5);
+    ;
 }
 
 
@@ -476,7 +468,7 @@ input[type="checkbox"] {
 
 }*/
 
-.col-11{
+.col-11 {
     background-color: rgba(40, 41, 41, 0.0);
     padding: 25px;
     bottom: 0;
@@ -486,7 +478,8 @@ input[type="checkbox"] {
     justify-content: center;
     overflow-y: hidden;
 }
-.col-1{
+
+.col-1 {
     background-color: rgba(40, 41, 41, 0.0);
     padding: 25px;
     bottom: 0;

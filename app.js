@@ -69,28 +69,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getWeatherData();
    
     srcBtnElement.addEventListener("click", (event) => {
-       if (searchElement.value !== Object.error ) {
-
+      
           
         getWeatherData(searchElement.value);
            
             
-          
-        }
-       
-
-        else {
-            Swal.fire({
-                title: "Yanlış Konum ",
-                text: "Lütfen Konumu Tekrar Giriniz!",
-                icon: "error",
-                buttons: true,
-                dangerMode: true,
-
-            })
+        
            
-           
-        }
+    
         
     });
 
@@ -108,8 +94,22 @@ function getWeatherData(location = "Eskisehir") {
         fetch(`http://api.weatherapi.com/v1/forecast.json?key=6237294a99f54ffabab70115230404&q=${location}&days=7`)
             .then(response => response.json())
             .then(data => {
-                console.log(data.hasOwnProperty())
+                if (console.log(data.hasOwnProperty('error'))) {
+                    Swal.fire({
+                        title: "Yanlış Konum ",
+                        text: "Lütfen Konumu Tekrar Giriniz!",
+                        icon: "error",
+                        buttons: true,
+                        dangerMode: true,
+        
+                    })
+                   
+                }
+                else{
+                console.log(data)
                 showWeatherData(data);
+                }
+                
             })
     },
         failure => {
@@ -302,6 +302,70 @@ function showWeatherData(data) {
 
 }
 
+function changeClass(name1, name2){
+    body.classList.remove(name1)
+    body.classList.add(name2)
+    btn.src = "icons/" + name2 + ".svg"
+}
+
+function getCookie(cname){
+    let name = cname + "="
+    let decodedCookie = decodeURIComponent(document.cookie)
+    let ca = decodedCookie.split(';')
+    for(let i = 0; i < ca.length;i++){
+        let c = ca[i]
+        while(c.charAt(0) == " "){
+            c = c.substring(1)
+        }
+        if(c.indexOf(name) == 0){
+            return c.substring(name.length, c.length)
+        }
+    }
+    return ""
+}
+
+if(getCookie("theme").length == 0){
+    document.cookie = "theme=light"
+}
+
+const change = document.querySelector("#change-theme")
+const body = document.querySelector("body")
+const btn = change.querySelector("img")
+const cookieTheme = getCookie("theme")
+
+change.addEventListener("click", () => {
+    if(body.getAttribute("class") == "light"){
+        changeClass("light", "dark")
+    }else{
+        changeClass("dark", "light")
+    }
+
+    document.cookie = "theme=" + body.getAttribute("class")
+})
+
+if(body.getAttribute("class") == cookieTheme){
+    body.classList.remove(body.getAttribute("class"))
+    body.classList.add(cookieTheme)
+}
+
+btn.src = "icons/" + body.getAttribute("class") + ".svg"
 
 
+
+/*const options = {
+  bottom: '64px', // default: '32px'
+  right: 'unset', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  
+  buttonColorDark: '#fff',  // default: '#100f2c'
+  buttonColorLight: '#100f2c', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();*/
 

@@ -13,7 +13,7 @@
     <title>Weather App</title>
 </head>
 
-<body>
+<body class="light">
 
 
     <div class="container-fluid">
@@ -21,6 +21,10 @@
 
             <div class=" col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-8">
                 <div class="place">
+                    <button id="change-theme" class="btn">
+                        <img src="icons/dark.svg" alt="">
+                    </button>
+
                     <div class="time_day" id="time_day"></div>
                     <div class="country" id="country"></div>
                 </div>
@@ -33,14 +37,25 @@
                 
             </div>
 
-            <div class="col-xxl-4 col-xl-3 col-lg-3 col-md-2 col-sm-4 "></div>
+            <div class="col-xxl-4 col-xl-3 col-lg-3 col-md-2 col-sm-4 ">
+                
+                    <div class="todayWeather" id="todayWeather">
+                            
+                        <div class="air_temperature" id="air_temperature">
+                            <div>Sıcaklık</div>
+                            <div>derece</div>
+                        </div>
+
+                    </div>
+                
+
+            </div>
 
             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-4 col-sm-6 ">
                
-              
+                
                 <div class="date_time">
-                   
-
+                    
                     <div class="time" id="time">
                         <span id="am-pm">PM</span>
                     </div>
@@ -53,30 +68,7 @@
            
 
 
-            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-8 col-sm-10 ">
-                <div class="todayWeather" id="todayWeather">
-                        
-                    <div class="air_temperature" id="air_temperature">
-                        <div>Sıcaklık</div>
-                        <div>derece</div>
-                    </div>
-
-                       
-                    <div class="sunrise" id="sunrise">
-                        <img src="" alt="">
-                        <div>Gün Doğumu</div>
-                        <div>derece</div>
-                    </div>
-
-                       
-                    <div class="sunset" id="sunset">
-                        <img src="" alt="">
-                        <div>Gün Batımı</div>
-                        <div>derece</div>
-                    </div>
-
-                </div>
-            </div>
+          
 
             <div class="col-xxl-9 col-xl-6 col-lg-6 col-md-4 col-sm-3 "></div>
 
@@ -91,6 +83,10 @@
 
                     <div class="weatherItemsDay_id" id="weatherItemsDay_id"></div>
                     
+                    <div class="weatherItemsDay_id" id="weatherItemsDay_id"></div>
+
+                    <div class="weatherItemsDay_id" id="weatherItemsDay_id"></div>
+
                     <div class="weatherItemsDay_id" id="weatherItemsDay_id"></div>
 
                     <div class="weatherItemsDay_id" id="weatherItemsDay_id"></div>
@@ -172,7 +168,6 @@
     </div>
    
 
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
     <script src="./sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
@@ -192,5 +187,6 @@
     <script src="app.js"></script>
 
 </body>
+
 
 </html>

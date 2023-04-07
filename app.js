@@ -67,26 +67,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
     getWeatherData();
-   
+
     srcBtnElement.addEventListener("click", (event) => {
-      
-        
+
+
         getWeatherData(searchElement.value);
-           
-            
-        
-           
-    
-        
+
+
+
+
+
+
     });
 
 
 
 
 });
-/*function showSweatAlert(data){
+function showSweatAlert() {
 
-    let alert = data.error.message;
+
 
     Swal.fire({
         title: "Yanlış Konum ",
@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         dangerMode: true,
 
     })
-}*/
+}
 
 
 
@@ -107,13 +107,17 @@ function getWeatherData(location = "Eskisehir") {
         fetch(`http://api.weatherapi.com/v1/forecast.json?key=6237294a99f54ffabab70115230404&q=${location}&days=7`)
             .then(response => response.json())
             .then(data => {
-                if (console.log(data.hasOwnProperty('error'))) {
-                    console.log(error)
+                console.log(data)
+                showWeatherData(data);
+            })
+            .catch(error => {
+                if (error.hasOwnProperty('message')){
                     showSweatAlert()
+                    console.error('Hata kodu:', error.status);
+                    
                 }
                 else{
-                 console.log(data)
-                 showWeatherData(data);
+                    console.error('Bilinmeyen hata:', error);
                 }
                 
             })
@@ -127,17 +131,17 @@ function getWeatherData(location = "Eskisehir") {
 
 function showWeatherData(data) {
     let itemsDataJson = {
-        
+
         sunrise: "",
         sunset: "",
-        
+
         latitude: "",
         longitude: "",
         cityy: "",
 
     };
 
-   
+
     itemsDataJson.latitude = data.location.lat;
     itemsDataJson.longitude = data.location.lon;
     itemsDataJson.cityy = data.location.name;
@@ -307,29 +311,29 @@ function showWeatherData(data) {
 
 }
 
-function changeClass(name1, name2){
+function changeClass(name1, name2) {
     body.classList.remove(name1)
     body.classList.add(name2)
     btn.src = "icons/" + name2 + ".svg"
 }
 
-function getCookie(cname){
+function getCookie(cname) {
     let name = cname + "="
     let decodedCookie = decodeURIComponent(document.cookie)
     let ca = decodedCookie.split(';')
-    for(let i = 0; i < ca.length;i++){
+    for (let i = 0; i < ca.length; i++) {
         let c = ca[i]
-        while(c.charAt(0) == " "){
+        while (c.charAt(0) == " ") {
             c = c.substring(1)
         }
-        if(c.indexOf(name) == 0){
+        if (c.indexOf(name) == 0) {
             return c.substring(name.length, c.length)
         }
     }
     return ""
 }
 
-if(getCookie("theme").length == 0){
+if (getCookie("theme").length == 0) {
     document.cookie = "theme=light"
 }
 
@@ -339,16 +343,16 @@ const btn = change.querySelector("img")
 const cookieTheme = getCookie("theme")
 
 change.addEventListener("click", () => {
-    if(body.getAttribute("class") == "light"){
+    if (body.getAttribute("class") == "light") {
         changeClass("light", "dark")
-    }else{
+    } else {
         changeClass("dark", "light")
     }
 
     document.cookie = "theme=" + body.getAttribute("class")
 })
 
-if(body.getAttribute("class") == cookieTheme){
+if (body.getAttribute("class") == cookieTheme) {
     body.classList.remove(body.getAttribute("class"))
     body.classList.add(cookieTheme)
 }

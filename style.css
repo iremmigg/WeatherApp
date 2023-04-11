@@ -45,7 +45,7 @@ body.light .date_time {
     padding: 20px;
     border-radius: 10px;
     margin: 10px 0;
-    text-align: end;
+    
     font-family: 'Poppins', sans-serif;
     display: block;
 
@@ -360,7 +360,7 @@ body.dark .col-12 {
 }
 
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:575px) {
     .date_time .time {
         display: none;
     }
@@ -370,7 +370,9 @@ body.dark .col-12 {
     .date_time .year{
         display: none;
     }
-
+    .body.light .date_time {
+        text-align: start;
+    }
     .weatherItemsDay .weatherItemsDay_id {
         display: flex;
         flex-direction: column;
@@ -413,7 +415,16 @@ body.dark .col-12 {
         border-radius: 20px;
     }
 
+    .search-bar{
+        text-align: start;
+        border-radius: 1px;
+        padding: 14px 45px;
+        cursor: pointer;
+        margin: 4px 2px;
+        color: #eee;
+        font-size: 14px;
 
+    
 }
 
 input::placeholder {
@@ -488,4 +499,60 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     overflow-y: hidden;
+}
+
+@media screen and (max-width:1700px) {
+   
+    
+    body.light .search-bar {
+        border-radius: 5px;
+        padding: 10px 35px;
+        cursor: pointer;
+        margin: 5px 2px;
+       
+        font-size: 13px;
+    
+    
+    }
+    
+    body.dark .search-bar {
+       
+        border-radius: 5px;
+        padding: 10px 35px;
+        cursor: pointer;
+        margin: 5px 2px;
+        color: #eee;
+        font-size: 13px;
+    
+    
+    }
+    
+    body.light .src-btn {
+        background-color: rgba(40, 41, 41, 0.6);
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        padding: 8px 28px;
+        cursor: auto;
+        font-size: 10px;
+        margin: 4px 2px;
+        color: white;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+    
+    }
+    
+    body.dark .src-btn {
+        background-color: rgba(172, 196, 196, 0.4);
+        border: 1px solid #294045;
+        border-radius: 5px;
+        padding: 8px 28px;
+        cursor: auto;
+        font-size: 10px;
+        margin: 4px 2px;
+        color: white;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+}
 }
